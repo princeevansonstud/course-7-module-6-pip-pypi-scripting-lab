@@ -2,15 +2,15 @@ from datetime import datetime
 import os
 
 
-def generate_log(data):
-    if not isinstance(data, list):
+def generate_log(log_data):
+    if not isinstance(log_data, list):
         raise ValueError("Input data must be a list of strings.")
 
     today_str = datetime.now().strftime("%Y%m%d")
     filename = f"log_{today_str}.txt"
 
     with open(filename, "w") as file:
-        for entry in data:
+        for entry in log_data:
             file.write(f"{entry}\n")
 
     print(f"Success: Log written to {filename}")
